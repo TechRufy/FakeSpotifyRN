@@ -1,0 +1,77 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Gotham-Black.otf",
+      "sha1": "a3cdcc0c2ff9c6289ccc5ae1bb9eade3395626da"
+    },
+    {
+      "path": "assets/fonts/Gotham-Bold.otf",
+      "sha1": "5963224900d40f243ab3c8ec35f21adfbb60cf1d"
+    },
+    {
+      "path": "assets/fonts/Gotham-BookItalic.otf",
+      "sha1": "de824c676848ccff284754eb83aa423c204aa3c7"
+    },
+    {
+      "path": "assets/fonts/Gotham-Light.otf",
+      "sha1": "3abc902e40df2ec26333b919d268556bfc6cb723"
+    },
+    {
+      "path": "assets/fonts/Gotham-Thin.otf",
+      "sha1": "8c674e85861583ea43c472973a3b09da9ba4d792"
+    },
+    {
+      "path": "assets/fonts/Gotham-ThinItalic.otf",
+      "sha1": "a37567b03b962ddfa20131463b2753174e92d593"
+    },
+    {
+      "path": "assets/fonts/Gotham-UltraItalic.otf",
+      "sha1": "ac639d09e69620d6a06f9c6a6f73c853818cdbf9"
+    },
+    {
+      "path": "assets/fonts/Gotham-XLight.otf",
+      "sha1": "c370235de05219139b91d7ef68ea560d0bf90b4b"
+    },
+    {
+      "path": "assets/fonts/Gotham-XLightItalic.otf",
+      "sha1": "afc40a573f2612530c9777feef9c456009caa38f"
+    },
+    {
+      "path": "assets/fonts/GothamBold.ttf",
+      "sha1": "ac5ba291bf8464df67a38f6054d25be7c2e0307f"
+    },
+    {
+      "path": "assets/fonts/GothamBoldItalic.ttf",
+      "sha1": "da6475cdce15b579ec90a27b5cafead0687c3f5a"
+    },
+    {
+      "path": "assets/fonts/GothamBook.ttf",
+      "sha1": "ed5bc8195822fc962503b042d0f5a1f406782f24"
+    },
+    {
+      "path": "assets/fonts/GothamBookItalic.ttf",
+      "sha1": "b156aeb90bd308fd0a717d9633d5a82e3af7c76b"
+    },
+    {
+      "path": "assets/fonts/GothamLight.ttf",
+      "sha1": "c44d6c4bde608e1d76b27a1587da83225af4ca4f"
+    },
+    {
+      "path": "assets/fonts/GothamLightItalic.ttf",
+      "sha1": "d605afce503bf950089829954651052dbb377c91"
+    },
+    {
+      "path": "assets/fonts/GothamMedium.ttf",
+      "sha1": "74c87f67010f63777e33c5114c76b1fc67e4ae5b"
+    },
+    {
+      "path": "assets/fonts/GothamMediumItalic.ttf",
+      "sha1": "c77627e4242f0edc56145897b900854a2960b3e1"
+    },
+    {
+      "path": "assets/fonts/GothamMedium_1.ttf",
+      "sha1": "74c87f67010f63777e33c5114c76b1fc67e4ae5b"
+    }
+  ]
+}
