@@ -11,7 +11,6 @@ function Home() {
         title="log out"
         onPress={() => {
           auth().signOut();
-          <Authentication />;
         }}></Button>
     </ScrollView>
   );

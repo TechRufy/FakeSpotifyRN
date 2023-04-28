@@ -18,7 +18,18 @@ import Home from './HomePage';
 import Style from './Stili';
 import Registration from './Register';
 
-function Authentication({}) {
+import {StackNavigationProp} from '@react-navigation/stack';
+import {AppStackParamList} from './App';
+type ProfileScreenNavigationProp = StackNavigationProp<
+  AppStackParamList,
+  'Authentication'
+>;
+
+type Props = {
+  navigation: ProfileScreenNavigationProp;
+};
+
+function Authentication({navigation}: Props) {
   const [password, setpassword] = useState('');
   const [email, setemail] = useState('');
   return (
@@ -42,7 +53,7 @@ function Authentication({}) {
         onChangeText={setpassword}></TextInput>
       <Pressable
         onPress={() => {
-          console.log('cazzi tuoi');
+          navigation.navigate('ForgotPassword');
         }}>
         <Text style={{alignSelf: 'flex-end', paddingRight: '10%'}}>
           Forgot Password ?
@@ -65,8 +76,8 @@ function Authentication({}) {
           }}>
           <Text>Don't have an account ? </Text>
           <Pressable
-            onPress={() => {
-              Registration();
+            onPress={async () => {
+              navigation.navigate('Register');
             }}>
             <Text style={Style.testoVerde}>Sign up</Text>
           </Pressable>
