@@ -8,6 +8,8 @@ import auth, {firebase} from '@react-native-firebase/auth';
 import React from 'react';
 import Registration from './Register';
 import ForgotPassword from './ForgotPassword';
+import {enGB, registerTranslation} from 'react-native-paper-dates';
+registerTranslation('en-GB', enGB);
 
 type AppStackParamList = {
   Authentication: undefined;

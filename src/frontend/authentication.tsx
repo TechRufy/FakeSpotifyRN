@@ -20,6 +20,7 @@ import Registration from './Register';
 
 import {StackNavigationProp} from '@react-navigation/stack';
 import {AppStackParamList} from './App';
+import ImageBox from './props/ImageBox';
 type ProfileScreenNavigationProp = StackNavigationProp<
   AppStackParamList,
   'Authentication'
@@ -32,14 +33,10 @@ type Props = {
 function Authentication({navigation}: Props) {
   const [password, setpassword] = useState('');
   const [email, setemail] = useState('');
+
   return (
     <ScrollView style={Style.containerPagina}>
-      <View style={Style.contenitoreLogo}>
-        <Image style={Style.Logo} source={logo} />
-        <View style={{paddingTop: '4%'}}>
-          <Text style={Style.titolo}>Spotify</Text>
-        </View>
-      </View>
+      <ImageBox image={logo} direction="vertical"></ImageBox>
       <Text style={Style.titolo}>Login</Text>
       <View style={{paddingTop: '3%'}}>
         <TextInput

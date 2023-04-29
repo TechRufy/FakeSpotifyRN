@@ -27,6 +27,7 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Del med"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Del med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Skjul"</string>
+    <string name="ampm_description">Velg am/pm</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktivér</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s fungerer ikke med mindre du slår på Google Play-tjenester.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Slå på Google Play-tjenester</string>
@@ -46,9 +47,19 @@
     <string name="common_signin_button_text">Logg på</string>
     <string name="common_signin_button_text_long">Logg på med Google</string>
     <string msgid="3260749812566568062" name="copy_toast_msg">"Linken er kopiert til utklippstavlen"</string>
+    <string name="date_description">Velg dato</string>
+    <string name="day_description">Velg dag</string>
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Kopiér linken"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Åpne i nettleseren"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Del link"</string>
+    <string name="hour_description">Velg time</string>
+    <string name="hour_tag">Time</string>
+    <string name="minutes_description">Velg minutter</string>
+    <string name="minutes_tag">Minutter</string>
+    <string name="month_description">Velg måned</string>
+    <string name="overlay">Datovelger</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Søk"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="time_tag">Tiden er</string>
+    <string name="year_description">Velg år</string>
 </resources>

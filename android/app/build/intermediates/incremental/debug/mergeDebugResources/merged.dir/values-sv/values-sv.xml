@@ -27,6 +27,7 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Dela med"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Dela med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Komprimera"</string>
+    <string name="ampm_description">Välj am/pm</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktivera</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s fungerar inte om du inte aktiverar Google Play-tjänster.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Aktivera Google Play-tjänster</string>
@@ -46,9 +47,19 @@
     <string name="common_signin_button_text">Logga in</string>
     <string name="common_signin_button_text_long">Logga in med Google</string>
     <string msgid="3260749812566568062" name="copy_toast_msg">"Länk kopierad till Urklipp"</string>
+    <string name="date_description">Välj ett datum</string>
+    <string name="day_description">Välj en dag</string>
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Kopiera länk"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Öppna i webbläsaren"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Dela länk"</string>
+    <string name="hour_description">Välj en timme</string>
+    <string name="hour_tag">Timme:</string>
+    <string name="minutes_description">Välj minuter</string>
+    <string name="minutes_tag">Minuter</string>
+    <string name="month_description">Välj en månad</string>
+    <string name="overlay">Datumväljare på</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Sök"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="time_tag">Tiden är</string>
+    <string name="year_description">Välj ett år</string>
 </resources>
