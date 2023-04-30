@@ -149,7 +149,7 @@ const Registration = ({navigation}: Props) => {
       </View>
       <Pressable
         style={[Style.contenitoreLogin, {marginTop: '10%'}]}
-        onPress={() => {
+        onPress={async () => {
           setError('');
           if (!checkTextInput()) {
             setError('riempi tutti i campi');
@@ -165,9 +165,14 @@ const Registration = ({navigation}: Props) => {
             checked,
           );
           setError('');
-          if (errore == 'data non valida') {
-            setError('Data non valida');
-          } else if ((errore = 'genere non selezionato')) {
+          var risultato = await errore.then(value => {
+            return value;
+          });
+
+          if (risultato.error.code == null) {
+            navigation.navigate('Authentication');
+          } else {
+            setError(risultato.error.code);
           }
         }}>
         <Text style={Style.testo}>Sign up</Text>
@@ -197,7 +202,7 @@ function controllomese(text: string) {
   }
 }
 
-function registrazione(
+async function registrazione(
   giorno: string,
   mese: string,
   anno: string,
@@ -216,6 +221,32 @@ function registrazione(
   } else if (genere == '') {
     return 'genere non selezionato';
   }
+
+  var risposta = await fetch(
+    'https://backendfakespotify.onrender.com/register/',
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        name: nome,
+        birthday: dataNascita,
+        gender: genere,
+      }),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    },
+  )
+    .then(Response => {
+      return Response.json();
+    })
+    .then(json => {
+      return json;
+    });
+
+  return risposta;
 }
 
 export default Registration;

@@ -33,6 +33,7 @@ type Props = {
 function Authentication({navigation}: Props) {
   const [password, setpassword] = useState('');
   const [email, setemail] = useState('');
+  const [error, setError] = useState('');
 
   return (
     <ScrollView style={Style.containerPagina}>
@@ -59,8 +60,17 @@ function Authentication({navigation}: Props) {
       <View style={{padding: '10%'}}>
         <Pressable
           style={Style.contenitoreLogin}
-          onPress={() => {
-            authenticator(email, password);
+          onPress={async () => {
+            var errore = authenticator(email, password);
+            var risultato = await errore.then(value => {
+              return value;
+            });
+
+            if (risultato.error == undefined) {
+              auth().signInWithCustomToken(risultato.token);
+            } else {
+              setError(risultato.error.code);
+            }
           }}>
           <Text style={Style.testo}>Sign in</Text>
         </Pressable>
@@ -78,6 +88,7 @@ function Authentication({navigation}: Props) {
             }}>
             <Text style={Style.testoVerde}>Sign up</Text>
           </Pressable>
+          <Text style={Style.error}>{error}</Text>
         </View>
       </View>
     </ScrollView>
@@ -85,7 +96,25 @@ function Authentication({navigation}: Props) {
 }
 
 function authenticator(Username: string, password: string) {
-  auth().signInWithEmailAndPassword(Username, password);
+  var risposta = fetch('https://backendfakespotify.onrender.com/login/', {
+    method: 'POST',
+    body: JSON.stringify({
+      email: Username,
+      password: password,
+    }),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(Response => {
+      return Response.json();
+    })
+    .then(json => {
+      return json;
+    });
+
+  return risposta;
 }
 
 export default Authentication;
