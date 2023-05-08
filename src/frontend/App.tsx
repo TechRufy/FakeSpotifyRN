@@ -15,11 +15,13 @@ type AppStackParamList = {
   Authentication: undefined;
   Register: undefined;
   ForgotPassword: undefined;
+  home: undefined;
 };
 
-const Stack = createStackNavigator<AppStackParamList>();
+const StackLogin = createStackNavigator<AppStackParamList>();
+const StackAPP = createStackNavigator<AppStackParamList>();
 
-const routes: Array<React.ComponentProps<typeof Stack.Screen>> = [
+const routesLogin: Array<React.ComponentProps<typeof StackLogin.Screen>> = [
   {
     name: 'Authentication',
     component: Authentication,
@@ -33,6 +35,14 @@ const routes: Array<React.ComponentProps<typeof Stack.Screen>> = [
   {
     name: 'ForgotPassword',
     component: ForgotPassword,
+    options: {headerShown: false},
+  },
+];
+
+const routesAPP: Array<React.ComponentProps<typeof StackAPP.Screen>> = [
+  {
+    name: 'home',
+    component: Home,
     options: {headerShown: false},
   },
 ];
@@ -56,14 +66,20 @@ function App() {
   if (initializing) return null;
 
   return user ? (
-    <Home />
+    <NavigationContainer>
+      <StackAPP.Navigator>
+        {routesAPP.map(routeConfig => (
+          <StackAPP.Screen key={routeConfig.name} {...routeConfig} />
+        ))}
+      </StackAPP.Navigator>
+    </NavigationContainer>
   ) : (
     <NavigationContainer>
-      <Stack.Navigator>
-        {routes.map(routeConfig => (
-          <Stack.Screen key={routeConfig.name} {...routeConfig} />
+      <StackLogin.Navigator>
+        {routesLogin.map(routeConfig => (
+          <StackLogin.Screen key={routeConfig.name} {...routeConfig} />
         ))}
-      </Stack.Navigator>
+      </StackLogin.Navigator>
     </NavigationContainer>
   );
 }

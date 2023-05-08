@@ -65,11 +65,13 @@ function Authentication({navigation}: Props) {
             var risultato = await errore.then(value => {
               return value;
             });
+            console.log(risultato);
 
             if (risultato.error == undefined) {
               auth().signInWithCustomToken(risultato.token);
+              console.log('ciao');
             } else {
-              setError(risultato.error.code);
+              setError(risultato.error);
             }
           }}>
           <Text style={Style.testo}>Sign in</Text>
@@ -95,8 +97,8 @@ function Authentication({navigation}: Props) {
   );
 }
 
-function authenticator(Username: string, password: string) {
-  var risposta = fetch('https://backendfakespotify.onrender.com/login/', {
+async function authenticator(Username: string, password: string) {
+  var risposta = await fetch('http://techrufy.pythonanywhere.com/Login', {
     method: 'POST',
     body: JSON.stringify({
       email: Username,
@@ -113,7 +115,6 @@ function authenticator(Username: string, password: string) {
     .then(json => {
       return json;
     });
-
   return risposta;
 }
 

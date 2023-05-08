@@ -37,11 +37,7 @@ const ForgotPassword = ({navigation}: Props) => {
         onPress={async () => {
           setError('');
           var risposta = await ResetPassword(email);
-          if (risposta.esito.code != undefined) {
-            setError('email non esistente');
-          } else {
-            setError(risposta.esito);
-          }
+          setError(risposta.esito);
         }}>
         <Text style={Style.testo}>Reset password</Text>
       </Pressable>
@@ -52,7 +48,7 @@ const ForgotPassword = ({navigation}: Props) => {
 
 async function ResetPassword(email: string) {
   var risposta = await fetch(
-    'https://backendfakespotify.onrender.com/ResetPassword',
+    'http://techrufy.pythonanywhere.com/ForgotPassword',
     {
       method: 'POST',
       body: JSON.stringify({

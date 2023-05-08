@@ -169,10 +169,10 @@ const Registration = ({navigation}: Props) => {
             return value;
           });
 
-          if (risultato.error.code == null) {
+          if (risultato.esito == 'tutto ok') {
             navigation.navigate('Authentication');
           } else {
-            setError(risultato.error.code);
+            setError(risultato.esito);
           }
         }}>
         <Text style={Style.testo}>Sign up</Text>
@@ -222,23 +222,20 @@ async function registrazione(
     return 'genere non selezionato';
   }
 
-  var risposta = await fetch(
-    'https://backendfakespotify.onrender.com/register/',
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        name: nome,
-        birthday: dataNascita,
-        gender: genere,
-      }),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
+  var risposta = await fetch('http://techrufy.pythonanywhere.com/Signup', {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+      password: password,
+      name: nome,
+      birthday: dataNascita,
+      gender: genere,
+    }),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
-  )
+  })
     .then(Response => {
       return Response.json();
     })
